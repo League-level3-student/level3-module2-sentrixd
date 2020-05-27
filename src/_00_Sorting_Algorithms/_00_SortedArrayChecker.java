@@ -6,13 +6,35 @@ public class _00_SortedArrayChecker {
 	//   and it returns a boolean.
 	//   The method returns true if the integer
 	//   array is in ascending order and false otherwise
-
+	static boolean intArraySorted(int[] inters) {
+		for (int i = 0; i < inters.length - 1; i++) {
+			if (inters[i] > inters[i + 1]) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
 	
 	//2. Write a static method called doubleArraySorted. 
 	//   This method takes in an array of doubles
 	//   and it returns a boolean.
 	//   The method returns true if the double
 	//   array is in ascending order and false otherwise
+	
+	static boolean doubleArraySorted(double[] doubles) {
+		double pastDouble = doubles[0] - 1;
+		
+		for (int i = 0; i < doubles.length; i++) {
+			if (pastDouble != doubles[i] - 1) {
+				return false;
+			}
+			
+			pastDouble = i;
+		}
+		
+		return true;
+	}
 
 	
 	//3. Write a static method called charArraySorted. 
@@ -29,5 +51,4 @@ public class _00_SortedArrayChecker {
 	//   The method returns true if the String
 	//   array is in alphabetical order and false otherwise
 	//   (Use the compareTo(String) method)
-
 }
